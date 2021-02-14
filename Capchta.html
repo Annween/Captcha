@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<head>
+	<title>Captcha</title>
+</head>
+
+<script type="text/javascript">
+
+function Captcha()
+{
+	var my_canvas = document.getElementById("canvas");
+	var cxt = my_canvas.getContext("2d");
+
+	var saisie = new Array('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z',
+	 	'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z', 
+ 	    	'0','1','2','3','4','5','6','7','8','9'); // on crée un tableau contenant toutes les lettres possibles (majuscules, minuscules et chiffres) afin qu'elles soient prise en compte lors de la génération du code
+
+	var i; 
+
+	for( i = 0; i < 3; i++ )
+	{
+		var a = saisie[Math.floor(Math.random() * saisie.length)]; // on parcours le tableau afin de générer aléatoirement les lettres préalablement rentrées dans notre tableau
+		var b = saisie[Math.floor(Math.random() * saisie.length)];
+		var c = saisie[Math.floor(Math.random() * saisie.length)];
+		var d = saisie[Math.floor(Math.random() * saisie.length)];
+
+	}	
+
+	var code = a + ' ' + b + ' ' + ' ' + c + ' ' + d; // permet de générer un code 
+ 	document.getElementById("mainCaptcha").cxt = code
+ 	document.getElementById("mainCaptcha").value = code
+}
+
+function SucessCaptcha()
+{
+	var string_code = removeSpaces(document.getElementById('mainCaptcha').value); // on déclare le code que l'on va générer sans les espaces
+	var string_saisie = removeSpaces(document.getElementById('txtInput').value); // on déclare le champ de texte où l'utilisateur va saisir le code
+
+	if (string_code === string_saisie) // on compare les deux chaînes de caractères afin de vérifier la saisie de l'utilisateur
+	{
+		return alert('Vous avez bien saisi le Captcha');
+
+	}
+	else
+	{
+		return alert('Erreur de saisie: Vous êtes un robot ?');
+	}
+}
+
+function removeSpaces(string) // permet de générer des espaces sur le code ici on sépare (split) les valeurs avec des espaces ''
+{
+	return string.split('').join(''); 
+}
+
+
+</script>
+
+<body onload="Captcha();"> 
+  <canvas id="canvas" width="300" height="100">
+   <h2 type="text" id="mainCaptcha"></h2>
+   <button type="button" class="btn btn-default" aria-label="Right Align">
+   <span class="glyphicon glyphicon-repeat" aria-hidden="true" onclick="Captcha();"></span>   
+   </button>     
+   <input type="text" id="txtInput"/>    
+   <input id="Button1" type="button" value="Valider" onclick="SucessCaptcha();"/>
+   </canvas>
+
+</body>
+
+<style type="text/css">
+
+#canvas
+{
+	background-color: grey; 
+	width: 300px; 
+	height: 100px; 
+}
+
+#mainCaptcha
+{
+	position: relative;
+	left: 60px; 
+	top: 5px; 
+}
+
+
+#txtInput, #Button1
+{
+	left:40px;
+	bottom: 0px;
+}
+</style>
+</html>
+
+ 
