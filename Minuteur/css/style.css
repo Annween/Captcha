@@ -1,0 +1,51 @@
+#start, #continue {
+	display: none;
+}
+
+.bloc-horloge {
+	display: inline-block;
+	margin-right: auto;
+	position: relative;
+    top: 1em;
+    left: 2em;
+}
+
+#horloge {
+    position: relative;
+    z-index: 1;
+}
+
+#temps {
+	position: absolute;
+    top: 25%;
+    left: 0;
+    font-size: 8em;
+    text-align: center;
+    width: 100%;
+    z-index: 2;
+    color: #000;
+    transition: opacity 350ms linear 0s;
+    -webkit-transition: opacity 350ms linear 0s;
+}
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+body {
+    background: #ddd;
+	margin: 0;
+}
+
+a {
+    color: #4e00cf;
+    font-size: 175%;
+    text-decoration: none;
+    margin-top: 36px;
+	margin-left: 1em;
+    display: block;
+    width: 300px;
+    text-align: center;
+    color: #000;
+}

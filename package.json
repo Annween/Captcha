@@ -1,0 +1,45 @@
+{
+  "devDependencies": {
+    "@types/jest": "^23.3.12",
+    "jest": "^26.6.3",
+    "multer": "^1.4.2"
+  },
+  "scripts": {
+    "start": "node server/server.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body": "^5.1.0",
+    "bootstrap": "^5.0.1",
+    "cjs": "^0.0.11",
+    "connect-flash": "^0.1.1",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-ejs-layouts": "^2.5.0",
+    "express-session": "^1.17.2",
+    "formidable": "^1.2.2",
+    "init": "^0.1.2",
+    "loader": "^2.1.1",
+    "mongoose": "^5.12.13",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.2.5",
+    "parser": "^0.1.4",
+    "passport": "^0.4.1",
+    "sequelize": "^6.6.2",
+    "tooltip": "^1.6.1"
+  },
+  "name": "node-express-api-sample",
+  "version": "1.0.0",
+  "description": "CapChat API",
+  "main": "server/server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Annween/Captcha.git"
+  },
+  "author": "Annween",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Annween/Captcha/issues"
+  },
+  "homepage": "https://github.com/Annween/Captcha#readme"
+}
