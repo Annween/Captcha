@@ -14,7 +14,8 @@
             <h1 class="text-center mb-3">
                 <i class="fas fa-user-plus"></i> Inscription
             </h1>
-            <form action="/views/inscription" method="POST">
+            <%- include ("./partials/messages"); %>
+            <form action="/users/inscription" method="POST">
                 <div class="form-group">
                     <label for="name">Nom</label>
                     <input
@@ -63,7 +64,7 @@
                     S'inscrire
                 </button>
             </form>
-            <p class="lead mt-4">Déjà inscrit ? <a href="/views/connexion">Connexion</a></p>
+            <p class="lead mt-4">Déjà inscrit ? <a href="/users/connexion">Connexion</a></p>
         </div>
     </div>
 </div>

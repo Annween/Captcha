@@ -9,12 +9,12 @@
   <title>Connexion</title>
 </head>
 <body>
-
 <div class="row mt-5">
   <div class="col-md-6 m-auto">
     <div class="card card-body">
       <h1 class="text-center mb-3"><i class="fas fa-sign-in-alt"></i>  Connexion</h1>
-      <form action="/views/connexion.ejs" method="POST">
+      <%- include ("./partials/messages"); %>
+      <form action="/users/connexion" method="POST">
         <div class="form-group">
           <label for="email">Email</label>
           <input
@@ -38,7 +38,7 @@
         <button type="submit" class="btn btn-primary btn-block">Se connecter</button>
       </form>
       <p class="lead mt-4">
-        Pas encore inscrit ? <a href="/views/inscription">Inscription</a>
+        Pas encore inscrit ? <a href="/users/inscription">Inscription</a>
       </p>
     </div>
   </div>
