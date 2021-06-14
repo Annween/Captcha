@@ -17,28 +17,24 @@ const methodOverride = require('method-override');
 const expressLayouts = require("express-ejs-layouts");
 const bodyParser = require("body-parser");
 
-
 //passport config
 require('../config/passport')(passport);
 
 //Mongo URI
 const mongoURI = 'mongodb+srv://orianne:orianne@cluster0.n76ka.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 
-//Create mongo connection
-const conn  = mongoose.createConnection(mongoURI);
-console.log("MongoDB Connected")
 
-
-
+// Create mongo connection
+const conn = mongoose.createConnection(mongoURI);
 
 // Init gfs
 let gfs;
 
-conn.once('open', function ()
-{
+conn.once('open', () => {
+    // Init stream
     gfs = Grid(conn.db, mongoose.mongo);
     gfs.collection('uploads');
-})
+});
 
 //Create storage engine
 
@@ -123,7 +119,7 @@ app.get('/', (req, res) => {
         }
     });
 });
-//app.use('/', require('../routes/index'));
+app.use('/', require('../routes/index'));
 app.use('/users', require('../routes/users'));
 
 

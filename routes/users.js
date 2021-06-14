@@ -10,7 +10,7 @@ const passport = require('passport');
 
 const User = require("../Models/user");
 
-//const { ensureAuthenticated } = require('../config/auth');
+const { ensureAuthenticated } = require('../config/auth'); // permet de s'assurer que l'utilisateur est bien authentifié pour visulaliser la page
 
 //Login page
 router.get('/connexion', (req, res) =>res.render('connexion'));

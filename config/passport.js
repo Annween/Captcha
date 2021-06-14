@@ -30,7 +30,7 @@ module.exports = function (passport){
         })
     );
 
-    passport.serializeUser((user, done) => {
+    passport.serializeUser((user, done) => { //  determine quelle données de l'objet user doit être stockée en session
         done(null, user.id);
     });
 

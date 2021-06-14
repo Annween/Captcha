@@ -35,7 +35,7 @@
     <% files.forEach(function(file) { %>
 
             <% if(file.isImage) { %>
-                <%= Math.floor(Math.random(file) *7)+1 %>
+
                 <img class="responsive-img" src="image/<%= file.filename %>" alt="">
 
             <% } else { %>
